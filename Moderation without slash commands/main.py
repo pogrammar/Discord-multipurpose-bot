@@ -56,6 +56,14 @@ class Moderation(commands.Cog):
     @bot.command()
     async def membercount(ctx):
         await ctx.send(ctx.guild.member_count)
+	
+    @bot.command()
+    async def timeout(ctx, member: discord.Member, minutes: int):
+        """Apply a timeout to a member"""
+
+        duration = datetime.timedelta(minutes=minutes)
+        await member.timeout_for(duration)
+        await ctx.reply(f"Member timed out for {minutes} minutes.")	
 
 bot.add_cog(Moderation(bot))
 bot.run('token')        
