@@ -29,7 +29,7 @@ class Moderation(commands.Cog):
     
         await member.ban(reason=None, delete_message_days=0)   
         await ctx.respond("Done.")    
-    @bot.slash_command(guild_ids=[...])
+    @bot.command()#Because unban doesnt work with slash commands
     @commands.has_permissions(ban_members = True)
     async def unban(ctx, member : discord.Member):
     
