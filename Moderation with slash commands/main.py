@@ -3,6 +3,7 @@ from discord.ext import commands
 from discord.commands import Option
 import discord.ui
 from discord.ui import *
+import datetime
 
 intents = discord.Intents.all() #need to enable intents
 bot = commands.Bot(command_prefix='~', intents=intents)
@@ -57,6 +58,14 @@ class Moderation(commands.Cog):
     @bot.slash_command(guild_ids=[...])
     async def membercount(ctx):
         await ctx.respond(ctx.guild.member_count)
+	
+    @bot.slash_command(guild_ids=[...])
+    async def timeout(ctx, member: Option(discord.Member, "Member"), minutes: Option(int, "Minutes")):
+        """Apply a timeout to a member"""
+
+        duration = datetime.timedelta(minutes=minutes)
+        await member.timeout_for(duration)
+        await ctx.reply(f"Member timed out for {minutes} minutes.")	
 
 
 bot.add_cog(Moderation(bot))
