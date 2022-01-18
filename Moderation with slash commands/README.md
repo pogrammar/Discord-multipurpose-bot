@@ -1,6 +1,6 @@
-Please do the following steps to use this github repo in your code:
+### Please do the following steps to use this github repo in your code:
 
-Steps:
+# Steps:
 
     Step 1) Copy the code.
     Step 2) Set the command prefix, on line number 8.
@@ -11,6 +11,6 @@ Steps:
 
 
 
-Note:
+# Note:
 
     The Unban command is a normal command because it doesnt work with slash commands.
