@@ -13,7 +13,7 @@
 - ✅ Info
 - Coming soon! giveaway
 - ✅ fun
-- Coming soon! help
+- ✅ Command Pages with buttons
 - Coming soon! search
 
 
