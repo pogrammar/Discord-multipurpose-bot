@@ -14,6 +14,7 @@
 - Coming soon! giveaway
 - ✅ fun
 - ✅ Paginator
+- ✅ Meme
 - Coming soon! search
 
 
