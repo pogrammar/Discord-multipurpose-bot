@@ -1,1 +1,2 @@
-Requrements are seperate for each cog
+git+https://github.com/Pycord-Development/pycord
+discord.ui

@@ -7,18 +7,15 @@
 
 <h3 align='center'> Categories 📑 </h3>
 
-
-- ✅ music 
-- ✅ moderation 
-- Coming soon! NSFW 
-- Coming soon! Info
-- Coming soon! giveway
+- ✅ Tic tac toe with buttons
+- ✅ Music 
+- ✅ Moderation 
+- ✅ Info
+- Coming soon! giveaway
 - ✅ fun
 - Coming soon! help
-- Coming soon! economy 
-- Coming soon! utility   
 - Coming soon! search
-- Coming soon! owner
+
 
 
 
@@ -27,4 +24,3 @@
 
 
 ### STAR THE PROJECT IF U LIKE :)
-### copyright ©️ 2021 Automod v12:
