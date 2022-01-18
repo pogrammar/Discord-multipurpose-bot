@@ -9,7 +9,7 @@ bot = commands.Bot(command_prefix='~', intents=intents)
 
 class Moderation(commands.Cog):
 	def __init__(self, bot):
-            self.bot = bot
+        self.bot = bot
 
 
     @bot.command()
