@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-import datetime
 import cogs.mod as mod
 
 intents = discord.Intents.all() #need to enable intents
