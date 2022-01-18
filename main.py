@@ -1,0 +1,13 @@
+import discord
+from discord.ext import commands
+import os
+
+
+for filename in os.listdir('./cogs'):
+    if filename.endswith('.py'):
+      bot.load_extension(f'cogs.{filename[:-3]}')
+
+intents = discord.Intents.all() #need to enable intents in discord dev portal
+bot = commands.Bot(command_prefix='~', intents=intents)
+
+bot.run('token')        

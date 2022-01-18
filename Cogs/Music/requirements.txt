@@ -1,0 +1,4 @@
+git+https://github.com/Pycord-Development/pycord
+youtube-dl
+pynacl
+FFmpeg
