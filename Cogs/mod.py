@@ -5,7 +5,7 @@ import discord.ui
 from discord.ui import *
 import datetime
 
-class Moderation(commands.Cog)
+class Moderation(commands.Cog):
 	def __init__(self, bot):#to Initialise
         self.bot = bot
 
