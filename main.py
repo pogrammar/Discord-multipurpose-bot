@@ -13,7 +13,7 @@ from Cogs import Fun
 from Music import fun as fun
 
 from Cogs import tictactoe
-from tictactoe import tic_tac_toe as tic_tac_toe
+from tictactoe import tic_tac_toe as Tic
 
 from Cogs import Paginator
 from Paginator import Paginator as Paginator
@@ -24,7 +24,7 @@ intents = discord.Intents.all() #need to enable intents in discord dev portal
 bot = commands.Bot(command_prefix='~', intents=intents)
 
 
-cogs1 = [mod, music, fun, Info, tic_tac_toe, Paginator]
+cogs1 = [Mod, Music, Fun, Info, Tic, Paginator]
 
 for i in range(len(cogs1)):
     cogs1[i].setup(bot)
