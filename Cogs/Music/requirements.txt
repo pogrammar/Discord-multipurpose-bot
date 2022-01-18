@@ -1,2 +1,4 @@
 git+https://github.com/Pycord-Development/pycord
-discord.ui
+youtube-dl
+pynacl
+FFmpeg
