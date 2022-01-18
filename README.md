@@ -1,6 +1,7 @@
 ### Please do the following steps to use this github repo in your code:
 
 # Steps:
+### Steps to use mod.py:
 
     Step 1) Copy the code.
     Step 2) Set the command prefix, on line number 8.
