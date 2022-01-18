@@ -1,4 +1,4 @@
-## You can contribute to this by creating a pull request
+## You can contribute to this by joining the [Discord Server](https://discord.gg/abxduGCZzq) for this Github repo and making a pull request
 
 
 
