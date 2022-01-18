@@ -1,14 +1,13 @@
 import discord
 from discord.ext import commands
-import cogs.mod as mod
+from Cogs import mod as mod
 
 intents = discord.Intents.all() #need to enable intents
 bot = commands.Bot(command_prefix='~', intents=intents)
 
-cogs = [mod]
+cogs1 = [mod]
 
-for i in range(len(cogs)):
-    cogs[i].setup(bot)
-
+for i in range(len(cogs1)):
+    cogs1[i].setup(bot)
 
 bot.run('token')        
