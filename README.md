@@ -9,9 +9,5 @@
             for eg. line 15, 20, In guild_ids, replace "..." With your guild ids.
     Step 4) In line 42, and 50, replace "MUTED_ROLE_ID" with the ID of the muted role.
 
-
-
-
-# Note:
-
     The Unban command is a normal command because it doesnt work with slash commands.
+    
