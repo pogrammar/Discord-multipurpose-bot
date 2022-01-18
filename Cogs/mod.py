@@ -5,10 +5,6 @@ import discord.ui
 from discord.ui import *
 import datetime
 
-intents = discord.Intents.all() #need to enable intents
-bot = commands.Bot(command_prefix='~', intents=intents)
-
-
 class Moderation(commands.Cog)
 	def __init__(self, bot):#to Initialise
         self.bot = bot
@@ -76,6 +72,5 @@ class Moderation(commands.Cog)
         await member.timeout_for(duration)#timeout for the amount of time given, then remove timeout
         await ctx.reply(f"Member timed out for {minutes} minutes.")	
 
-
-bot.add_cog(Moderation(bot))
-bot.run('token')        
+def setup(bot):
+    bot.add_cog(Moderation(bot))

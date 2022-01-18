@@ -1,2 +1,0 @@
-py-cordgit+https://github.com/Pycord-Development/pycord
-discord.ui
