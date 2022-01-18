@@ -1,13 +1,30 @@
-### Please do the following steps to use this github repo in your code:
+<h1 align='center'> A Multipurpose bot with many Commands made using Pycord </h1>
+<br>
+<h2 align='center'> If you want to contribute, join the [Support server](https://discord.gg/nKCAuaUj5E) and raise a pull request</h2>
 
-# Steps:
-### Steps to use mod.py:
 
-    Step 1) Copy the code.
-    Step 2) Set the command prefix, on line number 8.
-    Step 3) As each of the commands are slash commands, at the beginning of each command, 
-            for eg. line 15, 20, In guild_ids, replace "..." With your guild ids.
-    Step 4) In line 42, and 50, replace "MUTED_ROLE_ID" with the ID of the muted role.
+<h3 align='center'> STAR ⭐ THE PROJECT IF U LIKE :) </h3>
 
-    The Unban command is a normal command because it doesnt work with slash commands.
-    
+<h3 align='center'> Categories 📑 </h3>
+
+
+- ✅ music 
+- ✅ moderation 
+- Coming soon! NSFW 
+- Coming soon! Info
+- Coming soon! giveway
+- ✅ fun
+- Coming soon! help
+- Coming soon! economy 
+- Coming soon! utility   
+- Coming soon! search
+- Coming soon! owner
+
+
+
+<div align="center">
+
+
+
+### STAR THE PROJECT IF U LIKE :)
+### copyright ©️ 2021 Automod v12:
