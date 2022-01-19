@@ -2,6 +2,7 @@ import discord
 from discord import Embed
 from discord.ext import commands
 import asyncpraw
+import random
 
 
 class Meme(commands.Cog):
