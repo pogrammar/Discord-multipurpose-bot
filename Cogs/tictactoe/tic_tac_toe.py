@@ -1,16 +1,14 @@
-import discord
-from discord.ext import commands
-from discord.commands import Option  #Importing the packages
-import datetime
 from typing import List
 
+import discord
+from discord.ext import commands
 
-#Defines a custom button that contains the logic of the game.
+
+# Defines a custom button that contains the logic of the game.
 # The ['TicTacToe'] bit is for type hinting purposes to tell your IDE or linter
 # what the type of `self.view` is. It is not required.
 class TicTacToeButton(discord.ui.Button["TicTacToe"]):
-    def __init__(self, x: int, y: int, bot):
-        self.bot = bot
+    def __init__(self, x: int, y: int):
         # A label is required, but we don't need one so a zero-width space is used
         # The row parameter tells the View which row to place the button under.
         # A View can only contain up to 5 rows -- each row can only have 5 buttons.
@@ -121,14 +119,23 @@ class TicTacToe(discord.ui.View):
 
         return None
 
-class Tic(commands.Cog):
-    def __init__(self, bot: commands.Bot):
-        self.bot = bot
 
-    @commands.command()
-    async def tic(ctx: commands.Context):
-        """Starts a tic-tac-toe game with yourself."""
-        await ctx.send("Tic Tac Toe: X goes first", view=TicTacToe())
+class TicTacToeBot(commands.Bot):
+    def __init__(self):
+        super().__init__(command_prefix=commands.when_mentioned_or("$"))
 
-def setup(bot):
-    bot.add_cog(Tic(bot))    
+    async def on_ready(self):
+        print(f"Logged in as {self.user} (ID: {self.user.id})")
+        print("------")
+
+
+bot = TicTacToeBot()
+
+
+@bot.command()
+async def tic(ctx: commands.Context):
+    """Starts a tic-tac-toe game with yourself."""
+    await ctx.send("Tic Tac Toe: X goes first", view=TicTacToe())
+
+
+bot.run("token")
