@@ -24,7 +24,7 @@ class Fun(commands.Cog):
         await ctx.respond(f"🎱 **Question:** {question}\n**Answer:** {answer}")
     
     @slash_command(guild_ids=[...])
-    async def hotcalc(self, ctx, user: Option(discord.Member, "user")):    
+    async def hotcalc(self, ctx, user: Option(discord.Member, description="user")):    
         random.seed(user.id)
         r = random.randint(1, 100)
         hot = r / 1.17
