@@ -99,7 +99,7 @@ class Moderation(commands.Cog):
         await ctx.respond(f"<@{member.id}> has been warned. They now have {warns} warns.")
 	
 	
-    async def open_account(user):
+    async def open_account(self, user):
         with open ("reports.json","r")as f:
             users = json.load(f)
         if str (user.id) in users:
@@ -112,13 +112,13 @@ class Moderation(commands.Cog):
             json.dump(users, f)
 	
 	
-    async def get_user_data():
+    async def get_user_data(self):
         with open ("reports.json","r")as f:
             users = json.load(f)
         return users
 
 
-    async def warn(user, change = 1, mode = "warns"):
+    async def warn(self, user, change = 1, mode = "warns"):
         users = await get_user_data()
     
         users[str(user.id)][mode] += change
