@@ -125,7 +125,7 @@ class Tic(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
-    @bot.command()
+    @commands.command()
     async def tic(ctx: commands.Context):
         """Starts a tic-tac-toe game with yourself."""
         await ctx.send("Tic Tac Toe: X goes first", view=TicTacToe())
