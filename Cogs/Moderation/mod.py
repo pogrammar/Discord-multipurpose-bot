@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord.commands import slash_command
 from discord.commands import Option  #Importing the packages
 import datetime
 
@@ -9,14 +10,14 @@ class Moderation(commands.Cog):
         self.bot = bot
 
 
-    @bot.slash_command(guild_ids=[...])
+    @slash_command(guild_ids=[...])
     @commands.has_permissions(manage_messages = True)
     async def clear(self, ctx, amount: Option(int, "Member")):    
         await ctx.channel.purge(limit = amount)#Get the channel where the command is executed, then purge no. of messages provided
         await ctx.respond("Done.")#respond because in slash commands the response shows a little reply thing on top, for that you need ctx.respond
 
 
-    @bot.slash_command(guild_ids=[...])
+    @slash_command(guild_ids=[...])
     @commands.has_permissions(kick_members = True)
     async def kick(self, ctx,  member: Option(discord.Member, "Member")):
     
@@ -24,7 +25,7 @@ class Moderation(commands.Cog):
         await ctx.respond("Done.")
 
 
-    @bot.slash_command(guild_ids=[...])
+    @slash_command(guild_ids=[...])
     @commands.has_permissions(ban_members = True)
     async def ban(self, ctx, member: Option(discord.Member, "Member")):
     
@@ -32,14 +33,14 @@ class Moderation(commands.Cog):
         await ctx.respond("Done.")    
 
 
-    @bot.command()#Because unban doesnt work with slash commands
+    @commands.command()#Because unban doesnt work with slash commands
     @commands.has_permissions(ban_members = True)
     async def unban(self, ctx, member : discord.Member):
     
         await member.unban(member, reason=None)
         await ctx.respond("Done.")
     
-    @bot.slash_command(guild_ids=[...])
+    @slash_command(guild_ids=[...])
     @commands.has_permissions(manage_roles = True)
     async def mute(self, ctx, member: Option(discord.Member, "Member")):
         muted_role = ctx.guild.get_role(MUTED_ROLE_ID)#get the muted role with ID
@@ -49,7 +50,7 @@ class Moderation(commands.Cog):
         await ctx.respond("The member has been muted")
 
 
-    @bot.slash_command(guild_ids=[...])
+    @slash_command(guild_ids=[...])
     @commands.has_permissions(manage_roles = True)
     async def unmute(self, ctx, member: Option(discord.Member, "Member")):
         muted_role = ctx.guild.get_role(MUTED_ROLE_ID)
@@ -59,11 +60,11 @@ class Moderation(commands.Cog):
         await ctx.respond("The member has been unmuted")                                                   
                                                  
 
-    @bot.slash_command(guild_ids=[...])
+    @slash_command(guild_ids=[...])
     async def membercount(self, ctx):
         await ctx.respond(ctx.guild.member_count)#get guild no. of members
 	
-    @bot.slash_command(guild_ids=[...])
+    @slash_command(guild_ids=[...])
     async def timeout(self, ctx, member: Option(discord.Member, "Member"), minutes: Option(int, "Minutes")):
         """Apply a timeout to a member"""
 
@@ -74,7 +75,7 @@ class Moderation(commands.Cog):
 
 #Warn command section(it is still in the same class)-----------------------------------------------------
 
-    @bot.slash_command(guild_ids=[879964337438072902])    
+    @slash_command(guild_ids=[...])    
     async def warnings(self, ctx, member: Option(discord.Member, "Member")):
         await self.open_account(member)
 
@@ -84,7 +85,7 @@ class Moderation(commands.Cog):
 
         await ctx.respond(f"{member.name} has {warns} warns.")
 
-    @bot.slash_command(guild_ids=[879964337438072902])    
+    @slash_command(guild_ids=[...])    
     @commands.has_permissions(kick_members = True)
     async def warn(ctx, member: Option(discord.Member, "Member")):
         await self.open_account(member)
@@ -116,7 +117,7 @@ class Moderation(commands.Cog):
 
 
     async def warn(self, user, change = 1, mode = "warns"):
-        users = await get_user_data()
+        users = await self.get_user_data()
     
         users[str(user.id)][mode] += change
     

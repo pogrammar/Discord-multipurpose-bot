@@ -8,7 +8,7 @@ class Info(commands.Cog):
     def __init__(self, bot):#to Initialise
         self.bot = bot
 
-    @bot.command()
+    @commands.command()
     async def userinfo(self, ctx, user: Option(discord.Member, "Member")): # b'\xfc'  
         date_format = "%a, %d %b %Y %I:%M %p"
 
