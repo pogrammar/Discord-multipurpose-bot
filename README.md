@@ -11,7 +11,7 @@
 - ✅ Music 
 - ✅ Moderation 
 - ✅ Info
-- Coming soon! giveaway
+- ✅ giveaway
 - ✅ fun
 - ✅ Paginator
 - ✅ Meme
