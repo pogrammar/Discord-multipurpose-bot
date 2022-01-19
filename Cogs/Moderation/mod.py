@@ -6,7 +6,7 @@ import datetime
 
 
 class Moderation(commands.Cog):
-	def __init__(self, bot):#to Initialise
+    def __init__(self, bot):#to Initialise
         self.bot = bot
 
 
@@ -15,16 +15,16 @@ class Moderation(commands.Cog):
     async def clear(self, ctx, amount: Option(int, "Member")):    
         await ctx.channel.purge(limit = amount)#Get the channel where the command is executed, then purge no. of messages provided
         await ctx.respond("Done.")#respond because in slash commands the response shows a little reply thing on top, for that you need ctx.respond
-
-
+    
+    
     @slash_command(guild_ids=[...])
     @commands.has_permissions(kick_members = True)
     async def kick(self, ctx,  member: Option(discord.Member, "Member")):
     
         await member.kick(reason=None)#kick th member with no reason. you can add another option with "str" as the first param   
         await ctx.respond("Done.")
-
-
+    
+    
     @slash_command(guild_ids=[...])
     @commands.has_permissions(ban_members = True)
     async def ban(self, ctx, member: Option(discord.Member, "Member")):
