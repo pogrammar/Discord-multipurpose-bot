@@ -2,13 +2,15 @@ import discord
 from discord.ext import commands
 from discord.commands import Option  #Importing the packages
 import datetime
+from typing import List
 
 
 #Defines a custom button that contains the logic of the game.
 # The ['TicTacToe'] bit is for type hinting purposes to tell your IDE or linter
 # what the type of `self.view` is. It is not required.
 class TicTacToeButton(discord.ui.Button["TicTacToe"]):
-    def __init__(self, x: int, y: int):
+    def __init__(self, x: int, y: int, bot):
+        self.bot = bot
         # A label is required, but we don't need one so a zero-width space is used
         # The row parameter tells the View which row to place the button under.
         # A View can only contain up to 5 rows -- each row can only have 5 buttons.
