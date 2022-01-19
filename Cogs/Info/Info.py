@@ -10,7 +10,7 @@ class Info(commands.Cog):
         self.bot = bot
 
     @slash_command()
-    async def userinfo(self, ctx, user: Option(discord.Member, "Member")): # b'\xfc'  
+    async def userinfo(self, ctx, user: Option(discord.Member)): # b'\xfc'  
         date_format = "%a, %d %b %Y %I:%M %p"
 
         embed = discord.Embed(color=0xdfa3ff, description=user.mention)
