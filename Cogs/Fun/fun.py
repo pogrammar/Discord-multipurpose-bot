@@ -12,7 +12,7 @@ class Fun(commands.Cog):
         self.bot = bot
 
     @slash_command(guild_ids=[...])
-    async def eightball(self, ctx, question: Option(str, "question")):
+    async def eightball(self, ctx, question: Option(str, "Question")):
         ballresponse = [
             "Yes", "No", "Take a wild guess...", "Very doubtful",
             "Sure", "Without a doubt", "Most likely", "Might be possible",
