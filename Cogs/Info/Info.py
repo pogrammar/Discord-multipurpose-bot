@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from discord.commands import Option  #Importing the packages
 import datetime
+from discord.commands import slash_command
 
 
 class Info(commands.Cog):
