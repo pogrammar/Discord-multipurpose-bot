@@ -13,7 +13,7 @@ class Fun(commands.Cog):
         self.bot = bot
 
     @bot.slash_command(guild_ids=[...])
-    async def eightball(ctx, question: Option(str, "Question")):
+    async def eightball(self, ctx, question: Option(str, "Question")):
         ballresponse = [
             "Yes", "No", "Take a wild guess...", "Very doubtful",
             "Sure", "Without a doubt", "Most likely", "Might be possible",
@@ -25,7 +25,7 @@ class Fun(commands.Cog):
         await ctx.respond(f"🎱 **Question:** {question}\n**Answer:** {answer}")
     
     @bot.slash_command(guild_ids=[...])
-    async def hotcalc(ctx, user: Option(discord.Member, "User")):    
+    async def hotcalc(self, ctx, user: Option(discord.Member, "User")):    
         random.seed(user.id)
         r = random.randint(1, 100)
         hot = r / 1.17

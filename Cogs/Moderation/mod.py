@@ -14,14 +14,14 @@ class Moderation(commands.Cog):
 
     @bot.slash_command(guild_ids=[...])
     @commands.has_permissions(manage_messages = True)
-    async def clear(ctx, amount: Option(int, "Member")):    
+    async def clear(self, ctx, amount: Option(int, "Member")):    
         await ctx.channel.purge(limit = amount)#Get the channel where the command is executed, then purge no. of messages provided
         await ctx.respond("Done.")#respond because in slash commands the response shows a little reply thing on top, for that you need ctx.respond
 
 
     @bot.slash_command(guild_ids=[...])
     @commands.has_permissions(kick_members = True)
-    async def kick(ctx,  member: Option(discord.Member, "Member")):
+    async def kick(self, ctx,  member: Option(discord.Member, "Member")):
     
         await member.kick(reason=None)#kick th member with no reason. you can add another option with "str" as the first param   
         await ctx.respond("Done.")
@@ -29,7 +29,7 @@ class Moderation(commands.Cog):
 
     @bot.slash_command(guild_ids=[...])
     @commands.has_permissions(ban_members = True)
-    async def ban(ctx, member: Option(discord.Member, "Member")):
+    async def ban(self, ctx, member: Option(discord.Member, "Member")):
     
         await member.ban(reason=None, delete_message_days=0)#ban and dont delete any messages
         await ctx.respond("Done.")    
@@ -37,14 +37,14 @@ class Moderation(commands.Cog):
 
     @bot.command()#Because unban doesnt work with slash commands
     @commands.has_permissions(ban_members = True)
-    async def unban(ctx, member : discord.Member):
+    async def unban(self, ctx, member : discord.Member):
     
         await member.unban(member, reason=None)
         await ctx.respond("Done.")
     
     @bot.slash_command(guild_ids=[...])
     @commands.has_permissions(manage_roles = True)
-    async def mute(ctx, member: Option(discord.Member, "Member")):
+    async def mute(self, ctx, member: Option(discord.Member, "Member")):
         muted_role = ctx.guild.get_role(MUTED_ROLE_ID)#get the muted role with ID
     
         await member.add_roles(muted_role)#add the mute role
@@ -54,7 +54,7 @@ class Moderation(commands.Cog):
 
     @bot.slash_command(guild_ids=[...])
     @commands.has_permissions(manage_roles = True)
-    async def unmute(ctx, member: Option(discord.Member, "Member")):
+    async def unmute(self, ctx, member: Option(discord.Member, "Member")):
         muted_role = ctx.guild.get_role(MUTED_ROLE_ID)
     
         await member.remove_roles(muted_role)#remove muted role
@@ -63,11 +63,11 @@ class Moderation(commands.Cog):
                                                  
 
     @bot.slash_command(guild_ids=[...])
-    async def membercount(ctx):
+    async def membercount(self, ctx):
         await ctx.respond(ctx.guild.member_count)#get guild no. of members
 	
     @bot.slash_command(guild_ids=[...])
-    async def timeout(ctx, member: Option(discord.Member, "Member"), minutes: Option(int, "Minutes")):
+    async def timeout(self, ctx, member: Option(discord.Member, "Member"), minutes: Option(int, "Minutes")):
         """Apply a timeout to a member"""
 
         duration = datetime.timedelta(minutes=minutes)
@@ -78,10 +78,10 @@ class Moderation(commands.Cog):
 #Warn command section(it is still in the same class)-----------------------------------------------------
 
     @bot.slash_command(guild_ids=[879964337438072902])    
-    async def warnings(ctx, member: Option(discord.Member, "Member")):
-        await open_account(member)
+    async def warnings(self, ctx, member: Option(discord.Member, "Member")):
+        await self.open_account(member)
 
-        users = await get_user_data()
+        users = await self.get_user_data()
 
         warns = users[str(member.id)]["warns"]
 
@@ -90,11 +90,11 @@ class Moderation(commands.Cog):
     @bot.slash_command(guild_ids=[879964337438072902])    
     @commands.has_permissions(kick_members = True)
     async def warn(ctx, member: Option(discord.Member, "Member")):
-        await open_account(member)
+        await self.open_account(member)
 
-        users = await get_user_data()
+        users = await self.get_user_data()
 
-        warns = await warn(member)
+        warns = await self.warn(member)
 
         await ctx.respond(f"<@{member.id}> has been warned. They now have {warns} warns.")
 	
