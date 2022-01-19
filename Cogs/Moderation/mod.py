@@ -3,7 +3,6 @@ from discord.ext import commands
 from discord.commands import Option  #Importing the packages
 import datetime
 
-bot = commands.Bot()
 
 class Moderation(commands.Cog):
 	def __init__(self, bot):#to Initialise

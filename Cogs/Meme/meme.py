@@ -3,7 +3,6 @@ from discord import Embed
 from discord.ext import commands
 import asyncpraw
 
-bot = commands.Bot()
 
 class Meme(commands.Cog):
     def __init__(self, bot):#to Initialise
