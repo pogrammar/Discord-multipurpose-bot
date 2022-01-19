@@ -3,8 +3,6 @@ import random
 import discord
 from discord.ext import commands
 from discord.commands import Option  #Importing the packages
-import discord.ui
-from discord.ui import *
 
 bot = commands.Bot()
 
