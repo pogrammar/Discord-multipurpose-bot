@@ -98,7 +98,7 @@ class Moderation(commands.Cog):
 	
 	
     async def open_account(self, user):
-        with open ("reports.json","r")as f:
+        with open ("./Cogs/Moderation/reports.json","r")as f:
             users = json.load(f)
         if str (user.id) in users:
             return False
@@ -106,12 +106,12 @@ class Moderation(commands.Cog):
             users[str(user.id)] = {}
             users[str(user.id)]["warns"] = 0
         
-        with open("reports.json","w")as f:
+        with open("./Cogs/Moderation/reports.json","w")as f:
             json.dump(users, f)
 	
 	
     async def get_user_data(self):
-        with open ("reports.json","r")as f:
+        with open ("./Cogs/Moderation/reports.json","r")as f:
             users = json.load(f)
         return users
 
@@ -121,7 +121,7 @@ class Moderation(commands.Cog):
     
         users[str(user.id)][mode] += change
     
-        with open("reports.json","w")as f:
+        with open("./Cogs/Moderation/reports.json","w")as f:
             json.dump(users, f)
         
         warns = users[str(user.id)][mode]
