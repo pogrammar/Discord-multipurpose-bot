@@ -5,7 +5,7 @@ import datetime
 
 bot = commands.Bot()
 
-class Moderation(commands.Cog):
+class Info(commands.Cog):
     def __init__(self, bot):#to Initialise
         self.bot = bot
 
@@ -29,3 +29,6 @@ class Moderation(commands.Cog):
         embed.add_field(name="Guild permissions", value=perm_string, inline=False)
         embed.set_footer(text='ID: ' + str(user.id))
         return await ctx.respond(embed=embed)    
+
+def setup(bot):
+    bot.add_cog(Info(bot))        
