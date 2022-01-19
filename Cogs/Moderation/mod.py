@@ -74,5 +74,61 @@ class Moderation(commands.Cog):
         await member.timeout_for(duration)#timeout for the amount of time given, then remove timeout
         await ctx.reply(f"Member timed out for {minutes} minutes.")	
 
+
+#Warn command section(it is still in the same class)-----------------------------------------------------
+
+    @bot.slash_command(guild_ids=[879964337438072902])    
+    async def warnings(ctx, member: Option(discord.Member, "Member")):
+        await open_account(member)
+
+        users = await get_user_data()
+
+        warns = users[str(member.id)]["warns"]
+
+        await ctx.respond(f"{member.name} has {warns} warns.")
+
+    @bot.slash_command(guild_ids=[879964337438072902])    
+    @commands.has_permissions(kick_members = True)
+    async def warn(ctx, member: Option(discord.Member, "Member")):
+        await open_account(member)
+
+        users = await get_user_data()
+
+        warns = await warn(member)
+
+        await ctx.respond(f"<@{member.id}> has been warned. They now have {warns} warns.")
+	
+	
+    async def open_account(user):
+        with open ("reports.json","r")as f:
+            users = json.load(f)
+        if str (user.id) in users:
+            return False
+        else:
+            users[str(user.id)] = {}
+            users[str(user.id)]["warns"] = 0
+        
+        with open("reports.json","w")as f:
+            json.dump(users, f)
+	
+	
+    async def get_user_data():
+        with open ("reports.json","r")as f:
+            users = json.load(f)
+        return users
+
+
+    async def warn(user, change = 1, mode = "warns"):
+        users = await get_user_data()
+    
+        users[str(user.id)][mode] += change
+    
+        with open("reports.json","w")as f:
+            json.dump(users, f)
+        
+        warns = users[str(user.id)][mode]
+    
+        return warns	
+
 def setup(bot):
     bot.add_cog(Moderation(bot))
