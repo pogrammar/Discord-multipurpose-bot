@@ -8,8 +8,8 @@ from discord.commands import slash_command
 
 
 class Fun(commands.Cog):
-	def __init__(self, bot):#to Initialise
-            self.bot = bot
+    def __init__(self, bot):#to Initialise
+        self.bot = bot
 
     @slash_command(guild_ids=[...])
     async def eightball(self, ctx, question: Option(str, "Question")):
