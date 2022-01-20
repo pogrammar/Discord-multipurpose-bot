@@ -35,5 +35,3 @@ jobs:
     - name: Run tests
       env: 
           TOKEN : ${{secrets.TOKEN}}
-      run: |
-        Get-token "%TOKEN%"
