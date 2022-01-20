@@ -15,7 +15,8 @@
 - ✅ fun
 - ✅ Paginator
 - ✅ Meme
-- Coming soon! search
+- ✅ search
+- Coming soon! economy
 
 
 
