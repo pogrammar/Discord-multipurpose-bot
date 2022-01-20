@@ -7,7 +7,7 @@ class Poll(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @bot.slash_command(guild_ids=[...])
+    @slash_command(guild_ids=[...])
     async def poll(ctx,
                    question: Option(str),
                    a: Option(str),
