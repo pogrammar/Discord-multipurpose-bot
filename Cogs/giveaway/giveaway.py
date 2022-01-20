@@ -8,12 +8,12 @@ from random import choice
 from asyncio import TimeoutError, sleep
 from util import convert
 
-class Giveaway(Cog):
+class Giveaway(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
         self.cancelled = False
 
-    @command(name="giftcr", aliases=["giveaway", "gcreate", "gcr"])
+    @commands.command(name="gift", aliases=["giveaway", "gcreate", "gcr"])
     @has_permissions(manage_guild=True)
     # @has_role("admin")
     async def create_giveaway(self, ctx):
@@ -98,7 +98,7 @@ class Giveaway(Cog):
     #         await ctx.send("You are not allowed to create Giveaways")
         
 
-    @command(name="giftrrl", aliases=["gifreroll", "gftroll", "grr"])
+    @commands.command(name="giftrrl", aliases=["gifreroll", "gftroll", "grr"])
     @has_permissions(manage_guild=True)
     # @has_role("admin")
     async def giveaway_reroll(self, ctx, channel : discord.TextChannel, id_: int):
@@ -128,7 +128,7 @@ class Giveaway(Cog):
                 # winner = choice(users)
                 # await channel.send(f"Congratulations {winner.mention} on winning the Giveaway")
 
-    @command(name="giftdel", aliases=["gifdel", "gftdel", "gdl"])
+    @commands.command(name="giftdel", aliases=["gifdel", "gftdel", "gdl"])
     @has_permissions(manage_guild=True)
     # @has_role("admin")
     async def giveaway_stop(self, ctx, channel : discord.TextChannel, id_: int):
