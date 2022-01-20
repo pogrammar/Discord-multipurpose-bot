@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import os
 
+TOKEN = os.environ['TOKEN']
 intents = discord.Intents.all() #need to enable
 bot = commands.Bot(command_prefix='~', intents=intents)
 
