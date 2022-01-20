@@ -13,4 +13,4 @@ for foldername in os.listdir('./cogs'): #for every folder in cogs
 
 
 
-bot.run(secrets.TOKEN)
+bot.run(TOKEN)
