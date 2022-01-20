@@ -1,4 +1,5 @@
 import discord
+from discord.ext import commands
 from discord.ext.commands import Cog
 from discord.ext.commands import command, has_permissions, has_role
 from discord import Member
