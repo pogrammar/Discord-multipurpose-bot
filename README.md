@@ -15,13 +15,10 @@
 - ✅ fun
 - ✅ Paginator
 - ✅ Meme
-<<<<<<< Updated upstream
 - ✅ search
 - Coming soon! economy
-=======
 - ✅ Search
 - ✅ Poll
->>>>>>> Stashed changes
 
 
 
