@@ -1,7 +1,6 @@
 git+https://github.com/Pycord-Development/pycord
 typing
 asyncio
-util
 youtube-dl
 pynacl
 FFmpeg
