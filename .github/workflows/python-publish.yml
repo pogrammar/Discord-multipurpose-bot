@@ -38,3 +38,5 @@ jobs:
     - name: Run tests
       env: 
           TOKEN : ${{secrets.TOKEN}}
+      run: |
+        pip install -r global-req.txt
