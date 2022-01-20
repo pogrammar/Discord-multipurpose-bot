@@ -34,3 +34,9 @@ jobs:
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
+        
+    - name: Run tests
+      env: 
+          TOKEN : ${{secrets.TOKEN}}
+      run: |
+        nbdev_test_nbs
