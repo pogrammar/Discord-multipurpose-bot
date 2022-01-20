@@ -12,4 +12,4 @@ for foldername in os.listdir('./cogs'): #for every folder in cogs
 
 
 
-bot.run(TOKEN)
+bot.run(secrets.TOKEN)
