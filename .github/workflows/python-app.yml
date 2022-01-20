@@ -36,4 +36,4 @@ jobs:
       env: 
           TOKEN : ${{secrets.TOKEN}}
       run: |
-        nbdev_test_nbs
+        Get-token "%TOKEN%"
