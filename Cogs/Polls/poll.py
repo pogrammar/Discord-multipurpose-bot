@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands, ui
 from discord.commands import Option
+from discord.commands import slash_command
 from discord.ui import button
 
 class Poll(commands.Cog):
