@@ -9,9 +9,9 @@ class Poll(commands.Cog):
 
     @bot.slash_command(guild_ids=[...])
     async def poll(ctx,
-                   question: Option(str, "Question"),
-                   a: Option(str, "Option 1"),
-                   b: Option(str, "Option 2")):
+                   question: Option(str),
+                   a: Option(str),
+                   b: Option(str)):
         embed = discord.Embed(title=question,
                               description=f"🅰️: {a}\n 🅱️: {b}")
         await ctx.respond(embed=embed)
