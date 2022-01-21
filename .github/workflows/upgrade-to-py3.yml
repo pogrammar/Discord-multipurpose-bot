@@ -16,7 +16,7 @@ jobs:
               git config --local user.name "GitHub Action"
               git commit -m "Add changes" -a
       - name: Push changes
-        uses: pogrammar/create-pull-request@v2
+        uses: pogrammar/Discord-multipurpose-bot@master
         with:
           token: ${{ secrets.TOKEN }}
           branch: 'master'
