@@ -130,7 +130,8 @@ class Moderation(commands.Cog):
         return warns	
 #This is the announce function which allows the user with admin rights to announce something
    @slash_command(guild_ids=[guild_ids=[...])
-   async def announce(ctx,
+   async def announce(self, 
+		       ctx,
                        title: Option(str),
                        description: Option(str),
                        footer: Option(str),
