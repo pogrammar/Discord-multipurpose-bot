@@ -7,7 +7,7 @@ jobs:
   upgrade_to_Python3:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: pogrammar/Discord-multipurpose-bot@master
       - name: "Upgrade to Python3"
         uses: pogrammar/Discord-multipurpose-bot@master
       - name: Commit files
