@@ -128,6 +128,22 @@ class Moderation(commands.Cog):
         warns = users[str(user.id)][mode]
     
         return warns	
-
+#This is the announce function which allows the user with admin rights to announce something
+	@slash_command(guild_ids=[...])   
+	@has_permissions(administrator = True)
+	async def announce(ctx , 
+		Title : Option(str),
+		Description : Option(str),
+		Color-Hex : Option(str),
+		Thumbnail-Url : Option(str),	
+		Image-Url : Option(str),
+		Footer : Option(str) ) :
+		#function starts
+		 embed = discord.Embed(title=Title, description=Description,color = Color-Hex)
+		 embed.set_image(url=Image-Url)	
+    		 embed.set_thumbnail(Thumbnail-Url)
+   	 	 embed.set_footer(name=Footer) 
+   		 ctx.send(embed=embed)
+   
 def setup(bot):
     bot.add_cog(Moderation(bot))
