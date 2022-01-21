@@ -140,8 +140,8 @@ class Moderation(commands.Cog):
 	#function starts
         embed = discord.Embed(title=Title, description=Description)
         embed.set_image(url=ImageUrl)	
-	embed.set_thumbnail(url=ThumbnailUrl)
-	embed.set_footer(name=Footer)
+        embed.set_thumbnail(url=ThumbnailUrl)
+        embed.set_footer(name=Footer)
 	
         ctx.respond(embed=embed)
    
