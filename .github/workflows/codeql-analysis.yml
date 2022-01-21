@@ -75,5 +75,7 @@ jobs:
       run: |
         pip install -r global-req.txt
   
-      
+    - name: Upgrade to Python 3
+      uses: cclauss/Upgrade-to-Python3@0.1.0
+
       
