@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: "Upgrade to Python3"
-        uses: cclauss/Upgrade-to-Python3@master
+        uses: pogrammar/Discord-multipurpose-bot@master
       - name: Commit files
         run: |
               git config --local user.email "anishvatsal1@gmail.com"
