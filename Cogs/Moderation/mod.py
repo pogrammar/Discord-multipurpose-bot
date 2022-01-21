@@ -129,18 +129,18 @@ class Moderation(commands.Cog):
     
         return warns	
 #This is the announce function which allows the user with admin rights to announce something
-   @slash_command(guild_ids=[guild_ids=[...])
+   @slash_command(guild_ids=[...])
    async def announce(self, 
-		       ctx,
-                       title: Option(str),
-                       description: Option(str),
-                       footer: Option(str),
-                       r: Option(int),
-                       g: Option(int),
-                       b: Option(int),
-                       image_url: Option(str),
-                       thumbnail_url: Option(str),
-                       ):
+		      ctx,
+                      title: Option(str),
+                      description: Option(str),
+                      footer: Option(str),
+                      r: Option(int),
+                      g: Option(int),
+                      b: Option(int),
+                      image_url: Option(str),
+                      thumbnail_url: Option(str),
+                      ):
         embed = discord.Embed(title=title,
                               description=description,
                               color=discord.Color.from_rgb(r,g,b)
