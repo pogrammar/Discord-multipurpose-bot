@@ -1,0 +1,32 @@
+{
+    "IoT" : [
+        ["Smart Watch",100,"smart-watch"],
+        ["Smart Phone",150,"smart-phone"],
+        ["Smart TV",200,"smart-tv"],
+        ["Laptop",800,"laptop"]
+    ],
+    "Food" : [
+        ["Water",5,"water"],
+        ["Milk",10,"milk"],
+        ["Coffee",10,"coffee"],
+        ["Tea",15,"tea"],
+        ["Juice",20,"juice"],
+        ["Apple",60,"apple"],
+        ["Banana",40,"banana"],
+        ["Orange",50,"orange"],
+        ["Vegetable",75,"vegetable"],
+        ["Meat",200,"meat"],
+        ["Bread",20,"bread"],
+        ["Chicken",200,"chicken"],
+        ["Pizza",200,"pizza"],
+        ["Burger",150,"burger"]
+    ],
+    "Cars" : [
+        ["Car",10000,"car"],
+        ["Bike",5000,"bike"],
+        ["Scooter",3000,"scooter"],
+        ["Truck",20000,"truck"],
+        ["Bus",15000,"bus"],
+        ["Jeep",30000,"jeep"],
+        ["Motorcycle",5000,"motorcycle"]
+    ]
