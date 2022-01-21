@@ -67,7 +67,29 @@ jobs:
     #   make release
     - name: Upgrade to Python 3
       uses: cclauss/Upgrade-to-Python3@0.1.0
-      
+
+      on:
+        push:
+          branches:
+            - master
+
+      jobs:
+        upgrade_to_Python3:
+          runs-on: ubuntu-latest
+          steps:
+            - uses: actions/checkout@v2
+            - name: "Upgrade to Python3"
+              uses: cclauss/Upgrade-to-Python3@master
+            - name: Commit files
+              run: |
+                git config --local user.email "me@me.me"
+                git config --local user.name "GitHub Action"
+                git commit -m "Add changes" -a
+            - name: Push changes
+              uses: peter-evans/create-pull-request@v2
+              with:
+                token: ${{ secrets.TOKEN }}
+                branch: 'py3-addendum'
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
       
@@ -77,5 +99,6 @@ jobs:
       run: |
         pip install -r global-req.txt
   
+
 
       
