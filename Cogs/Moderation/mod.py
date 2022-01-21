@@ -134,12 +134,11 @@ class Moderation(commands.Cog):
     async def announce(ctx , 
     	Title : Option(str),
         Description : Option(str),
-        Color-Hex : Option(str),
         Thumbnail-Url : Option(str),	
         Image-Url : Option(str),
         Footer : Option(str) ) :
 	#function starts
-        embed = discord.Embed(title=Title, description=Description,color = Color-Hex)
+        embed = discord.Embed(title=Title, description=Description)
         embed.set_image(url=Image-Url)	
 	embed.set_thumbnail(Thumbnail-Url)
 	embed.set_footer(name=Footer)
