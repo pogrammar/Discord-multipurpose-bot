@@ -65,7 +65,9 @@ jobs:
     #- run: |
     #   make bootstrap
     #   make release
-
+    - name: Upgrade to Python 3
+      uses: cclauss/Upgrade-to-Python3@0.1.0
+      
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
       
@@ -75,7 +77,5 @@ jobs:
       run: |
         pip install -r global-req.txt
   
-    - name: Upgrade to Python 3
-      uses: cclauss/Upgrade-to-Python3@0.1.0
 
       
