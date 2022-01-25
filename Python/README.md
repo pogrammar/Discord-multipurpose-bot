@@ -16,7 +16,7 @@
 - ✅ Paginator
 - ✅ Meme
 - ✅ search
-- Coming soon! economy
+- ✅ economy
 - ✅ Search
 - ✅ Poll
 
