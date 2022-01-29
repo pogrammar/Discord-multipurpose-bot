@@ -1,6 +1,6 @@
 const Discord = require("discord.js") // Require the library this is built in
 const client = new Discord.Client({intents: new Discord.Intents(32767)}) // Make a new discord client with all intents
-const TOKEN = "OTM1MzgwNjk1MTkzMzY2NTM2.Ye9zKA.eFNYyUfQVNa4_cpyST-MFMxEa-I" // Let the program know what bot we want to login with
+const TOKEN = process.env.token // Let the program know what bot we want to login with
 const prefix = "~" // Tell the program what prefix we want to use
 
 const fun = require("./commands/Fun/fun") // Require our fun commands.
