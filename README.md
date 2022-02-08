@@ -6,7 +6,7 @@ Note: If you want to use the code in this repo, do NOT fork it. this repo has JS
 
 ### Step 1:
   Navigate to any cog you want.
-  Click on the "cooy raw button"
+  Click on the "copy raw button"
   
 ####  Video demonstration:
   ![Alt text](https://github.com/pogrammar/Discord-multipurpose-bot/blob/master/vids/Video%201.gif)
