@@ -441,4 +441,4 @@ async def update_bank(user,change=0,mode = 'wallet'):
 
 
 
-client.run('OTAzNjY5MTU5NDkyMjAyNTU2.YXwVfA.uRD2HYlMBSSKJAnJvvZXmA4IVE0')
+client.run(TOKEN)
